@@ -58,8 +58,8 @@ func newDeckFromFile (filename string) deck{	// Reversing the above process and 
 	s := strings.Split(string(bs),",") 	// spliting the string to each card and converting it back to deck type
 	return deck(s)
 }
-func (d deck) shuffle(){
-	source := rand.NewSource(time.Now().UnixNano())
+func (d deck) shuffle(){  // Shuffle the deck
+	source := rand.NewSource(time.Now().UnixNano())		//genereating a random number
 	r:= rand.New(source)
 	for i := range d {
 		newPosition := r.Intn(len(d) - 1)
